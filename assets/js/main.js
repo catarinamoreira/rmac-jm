@@ -259,10 +259,11 @@ function checkBodyWidth(){
 	var initialImageWidth = 1919;
 	var initialImageHeight = 1382;
 	var initialImageRatio = (browserWidth - bodyPadding)/initialImageWidth;
+	var imageHeight = Math.round(initialImageHeight*initialImageRatio);
 	
 	if(browserWidth <= 640){
 		var bodyPadding = parseInt($("body").css("padding-top").replace("px", ""));
-		$(".page").css("height", "auto").css("min-height", (Math.round(initialImageHeight*initialImageRatio)+1)+"px")
+		$(".page").css("height", "auto").css("min-height", (imageHeight+1)+"px")
 		$(".page.withimg img").css("width", $("body").width()).css("height", imageHeight);
 		
 		var chapterHeight = 500;
@@ -270,9 +271,8 @@ function checkBodyWidth(){
 			chapterHeight = browserHeight - bodyPadding;
 			
 		$(".page.withBG").css("min-height", chapterHeight);
-		$(".page.withBG > div").css("height", (browserHeight - bodyPadding)+"px").removeClass("hidden");
+		$(".page.withBG > div").css("height", chapterHeight+"px").removeClass("hidden");
 	} else {
-		var imageHeight = Math.round(initialImageHeight*initialImageRatio);
 		if(imageHeight < browserHeight)
 			$(".page").css("min-height", browserHeight+"px").css("height", "auto");
 		else
@@ -280,8 +280,8 @@ function checkBodyWidth(){
 			
 		$(".page.withimg img").css("width", $("body").width()).css("height", imageHeight);
 		
-		var chapterHeight = 640;
-		if(browserHeight > 640)
+		var chapterHeight = 600;
+		if(browserHeight > 600)
 			chapterHeight = browserHeight;
 		
 		$(".page.withBG").css("min-height", chapterHeight+"px").css("height", "auto");
