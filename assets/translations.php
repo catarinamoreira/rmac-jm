@@ -74,10 +74,11 @@ Organisation and Corporate Governance",
 		"GOVERNO DA SOCIEDADE" => "CORPORATE GOVERNANCE",
 		"RESPONSABILIDADE CORPORATIVA NA CRIAÇÃO DE VALOR" => "CORPORATE RESPONSIBILITY IN VALUE CREATION",
 		"RELATÓRIO E CONTAS INDIVIDUAL" => "INDIVIDUAL ANNUAL REPORT",
-		"Relatório e Contas 2013 - Jerónimo Martins" => "Annual Report 2013 - Jerónimo Martins",
+		"Jerónimo Martins - Relatório e Contas 2013" => "Jerónimo Martins Annual Report 2013",
 		"politica-de-cookies" => "cookie-policy",
 		"termos-e-condicoes" => "terms-and-conditions",
 		"Índice" => "Index",
+		"Relatório e Contas Jerónimo Martins 2013. Há mais de 220 anos a inovar em direção a um mundo melhor e mais sustentável." => "Jerónimo Martins 2013 Report. Innovating for more than 220 years towards a better and more sustainable world.",
 	);
 	
 	function translate($string){

@@ -4,8 +4,8 @@
 		<img src="<?php echo BASE_URL; ?>assets/images/blue-gradient.png" class="background" />
 		<div class="hidden">
 			<div class="center">
-				<img src="<?php echo BASE_URL; ?>assets/images/homepage-normal.png" />
-				<span class="buttoncontainer clearfix relativetodoc"><span><a href="<?php echo BASE_URL; ?>export/PDFs/jmrc13_<?php echo $GLOBALS['currentLanguage']; ?>.pdf" target="_blank" class="button pdf orange"><?php echo translate("Download em PDF"); ?> <span class="icon"></span></a></span></span>
+				<img src="<?php echo BASE_URL; ?>assets/images/<?php echo $GLOBALS["currentLanguage"]; ?>/homepage.png" />
+				<span class="buttoncontainer clearfix relativetodoc"><span><a href="<?php echo BASE_URL; ?>export/PDFs/jmrc13_<?php echo $GLOBALS["currentLanguage"]; ?>.pdf" target="_blank" class="button pdf orange"><?php echo translate("Download em PDF"); ?> <span class="icon"></span></a></span></span>
 			</div>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 										</a>
 									</li>
 									<li class="featured">
-										<a href="javascript:;" class="disabled">
+										<a href="javascript:;" class="gotopage clearfix" page-id="10">
 											<span class="value clearfix"><span><?php echo translate("O Grupo<br> Jerónimo Martins"); ?></span></span>
 										</a>
 									</li>
@@ -104,7 +104,7 @@
 								<span>2</span>
 								<ul>
 									<li class="featured">
-										<a href="javascript:;" class="disabled">
+										<a href="javascript:;" class="gotopage clearfix" page-id="26">
 											<span class="value clearfix"><span><?php echo translate("Relatório consolidado<br> de Gestão"); ?></span></span>
 										</a>
 									</li>
@@ -127,7 +127,7 @@
 							<span>3</span>
 							<ul>
 								<li class="featured">
-									<a href="javascript:;" class="disabled">
+									<a href="javascript:;" class="gotopage clearfix" page-id="70">
 										<span class="value clearfix"><span><?php echo translate("Demonstrações<br> Financeiras Consolidadas"); ?></span></span>
 									</a>
 								</li>
@@ -145,7 +145,7 @@
 							<span>4</span>
 							<ul>
 								<li class="featured">
-									<a href="javascript:;" class="disabled">
+									<a href="javascript:;" class="gotopage clearfix" page-id="148">
 										<span class="value clearfix"><span><?php echo translate("Governo da<br> Sociedade"); ?></span></span>
 									</a>
 								</li>
@@ -168,7 +168,7 @@
 							<span>4</span>
 							<ul>
 								<li class="featured">
-									<a href="javascript:;" class="disabled">
+									<a href="javascript:;" class="gotopage clearfix" page-id="148">
 										<span class="value clearfix"><span><?php echo translate("Governo da<br> Sociedade"); ?></span></span>
 									</a>
 								</li>
@@ -189,7 +189,7 @@
 							<span>5</span>
 							<ul>
 								<li class="featured">
-									<a href="javascript:;" class="disabled">
+									<a href="javascript:;" class="gotopage clearfix" page-id="200">
 										<span class="value clearfix"><span><?php echo translate("Responsabilidade corporativa<br> na criação de valor"); ?></span></span>
 									</a>
 								</li>
@@ -213,7 +213,7 @@
 							<span>6</span>
 							<ul>
 								<li class="featured">
-									<a href="javascript:;" class="disabled">
+									<a href="javascript:;" class="gotopage clearfix" page-id="242">
 										<span class="value clearfix"><span><?php echo translate("Relatório e contas<br> individual"); ?></span></span>
 									</a>
 								</li>
@@ -272,157 +272,214 @@
 			</div>
 		</div>
 	</div>*/ ?>
-	
-	<div id="p303" class="page withBG chapter1-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-1-bg-1.png" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p304" class="page withBG chapter1-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-bg-1.jpg" class="background resize-width align-bottom" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-3.png" class="title-3 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-4.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-5.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-1-page-2-title-6.png" class="title-3 animate-left-to-right" />
-		</div>
-	</div>
-	<div id="p305" class="page withBG chapter2-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-1-bg-1.jpg" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p306" class="page withBG chapter2-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-bg-1.jpg" class="background resize-height align-right" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-3.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-4.png" class="title-4 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-5.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-6.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-7.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-8.png" class="title-4 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-9.png" class="title-5 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-2-page-2-title-10.png" class="title-6 animate-left-to-right" />
-		</div>
-	</div>
-	<div id="p307" class="page withBG chapter3-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/blue-gradient.png" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p308" class="page withBG chapter3-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-bg-1.jpg" class="background resize-height align-right" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-3.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-4.png" class="title-4 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-5.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-6.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-7.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-3-page-2-title-8.png" class="title-4 animate-left-to-right" />
-		</div>
-	</div>
-	<div id="p309" class="page withBG chapter4-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-1-bg-1.jpg" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p310" class="page withBG chapter4-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-bg-1.jpg" class="background resize-width align-bottom" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-3.png" class="title-3 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-4.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-5.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-6.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-7.png" class="title-4 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-4-page-2-title-8.png" class="title-5 animate-left-to-right" />
-		</div>
-	</div>
-	<div id="p311" class="page withBG chapter5-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-1-bg-1.jpg" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p312" class="page withBG chapter5-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-bg-1.jpg" class="background resize-height align-right" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-3.png" class="title-3 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container show-white">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-4.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-5.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-6.png" class="title-3 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-7.png" class="title-4 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-8.png" class="title-5 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-9.png" class="title-6 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-5-page-2-title-10.png" class="title-7 animate-left-to-right" />
-		</div>
-	</div>
-	<div id="p313" class="page withBG chapter6-page1 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-1-bg-1.jpg" class="background" />
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-1-nmb-1.png" class="number animate-left-to-right" />
-		<div class="title-container elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-1-title-1.png" class="title-1 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-1-title-2.png" class="title-2 animate-right-to-left" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-1-title-3.png" class="title-3 animate-right-to-left" />
-		</div>
-	</div>
-	<div id="p314" class="page withBG chapter6-page2 chapter-to-animate">
-		<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-nmb-1.png" class="number animate-top-to-bottom" />
-		<div class="title-container-1 elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-title-1.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-title-2.png" class="title-2 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-title-3.png" class="title-3 animate-left-to-right" />
-		</div>
-		<div class="title-container-2 elements-container">
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-title-4.png" class="title-1 animate-left-to-right" />
-			<img src="<?php echo BASE_URL; ?>assets/images/chapter-6-page-2-title-5.png" class="title-2 animate-left-to-right" />
-		</div>
-	</div>
+	<?php function addChapter1Page1() {
+		 echo '<div id="p10" class="page withBG chapter1-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-1-page-1-bg-1.png" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-1-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter1Page2() {
+		echo '<div id="p12" class="page withBG chapter1-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-1-page-2-bg-1.jpg" class="background resize-width align-bottom" />
+				<img src="'.BASE_URL.'assets/images/chapter-1-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-3.png" class="title-3" />
+				</div>
+				<div class="title-container-2 elements-container animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-4.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-5.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-1-page-2-title-6.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter2Page1() {
+		echo '<div id="p26" class="page withBG chapter2-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-2-page-1-bg-1.jpg" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-2-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter2Page2() {
+		echo '<div id="p28" class="page withBG chapter2-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-2-page-2-bg-1.jpg" class="background resize-height align-right" />
+				<img src="'.BASE_URL.'assets/images/chapter-2-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-3.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-4.png" class="title-4" />
+				</div>
+				<div class="title-container-2 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-5.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-6.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-7.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-8.png" class="title-4" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-9.png" class="title-5" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-2-page-2-title-10.png" class="title-6" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter3Page1($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter3-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/blue-gradient.png" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-3-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter3Page2($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter3-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-3-page-2-bg-1.jpg" class="background resize-height align-right" />
+				<img src="'.BASE_URL.'assets/images/chapter-3-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-3.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-4.png" class="title-4" />';
+					if($GLOBALS["currentLanguage"] == "en")
+						echo '<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-9.png" class="title-5" />';
+					
+				echo '</div>
+				<div class="title-container-2 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-5.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-6.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-7.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-3-page-2-title-8.png" class="title-4" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter4Page1($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter4-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-4-page-1-bg-1.jpg" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-4-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter4Page2($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter4-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-4-page-2-bg-1.jpg" class="background resize-width align-bottom" />
+				<img src="'.BASE_URL.'assets/images/chapter-4-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-3.png" class="title-3" />
+				</div>
+				<div class="title-container-2 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-4.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-5.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-6.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-7.png" class="title-4" />';
+					if($GLOBALS["currentLanguage"] == "pt")
+						echo '<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-4-page-2-title-8.png" class="title-5" />';
+				echo '</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter5Page1($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter5-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-5-page-1-bg-1.jpg" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-5-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter5Page2($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter5-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-5-page-2-bg-1.jpg" class="background resize-height align-right" />
+				<img src="'.BASE_URL.'assets/images/chapter-5-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-3.png" class="title-3" />
+				</div>
+				<div class="title-container-2 elements-container show-white animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-4.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-5.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-6.png" class="title-3" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-7.png" class="title-4" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-8.png" class="title-5" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-9.png" class="title-6" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-5-page-2-title-10.png" class="title-7" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter6Page1($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter6-page1 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-6-page-1-bg-1.jpg" class="background" />
+				<img src="'.BASE_URL.'assets/images/chapter-6-page-1-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container elements-container animate-block right-to-left">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-1-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-1-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-1-title-3.png" class="title-3" />
+				</div>
+			</div>
+		</div>';
+	} ?>
+	<?php function addChapter6Page2($pageNumber) {
+		echo '<div id="p'.$pageNumber.'" class="page withBG chapter6-page2 chapter-to-animate">
+			<div>
+				<img src="'.BASE_URL.'assets/images/chapter-6-page-2-nmb-1.png" class="number animate-top-to-bottom" />
+				<div class="title-container-1 elements-container animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-2-title-1.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-2-title-2.png" class="title-2" />
+					<img src="'.BASE_URL.'assets/images/'.$GLOBALS["currentLanguage"].'/chapter-6-page-2-title-3.png" class="title-3" />
+				</div>
+				<div class="title-container-2 elements-container animate-block left-to-right">
+					<img src="'.BASE_URL.'assets/images/chapter-6-page-2-title-4.png" class="title-1" />
+					<img src="'.BASE_URL.'assets/images/chapter-6-page-2-title-5.png" class="title-2" />
+				</div>
+			</div>
+		</div>';
+	} ?>
 	<?php 
-		$filesList = scandir("../assets/images/relatory/PT");
+		$language = $GLOBALS["currentLanguage"];
+		$type = "desktop";
+		
+		if($detect->isMobile() && !$detect->isTablet())
+			$type = "mobile";
+	
+		$filesList = scandir("../assets/images/relatory-".$type."/".$language);
 		$filesList = array_slice($filesList, 2);
 		natsort($filesList);
 	?>
@@ -431,12 +488,27 @@
 		 $pageName = str_replace("JM._", "", $file);
 		 $pageName = str_replace(".jpg", "", $pageName);
 		 
-		 $blackList = array("01", "02", "03", "04", "05");
+		 $blackList = array("11", "27", "71", "149", "201", "243");
+		 
 		 if(!in_array($pageName, $blackList)): 
 		?>
-	<div id="p<?php echo intval($pageName); ?>" class="page">
+		<?php 
+			if($pageName == 10) : addChapter1Page1();
+			elseif($pageName == 12) : addChapter1Page2();
+			elseif($pageName == 26) : addChapter2Page1();
+			elseif($pageName == 28) : addChapter2Page2();
+			elseif($pageName == 70) : addChapter3Page1(70);
+			elseif($pageName == 72) : addChapter3Page2(72);
+			elseif($pageName == 148) : addChapter4Page1(148);
+			elseif($pageName == 150) : addChapter4Page2(150);
+			elseif($pageName == 200) : addChapter5Page1(200);
+			elseif($pageName == 202) : addChapter5Page2(202);
+			elseif($pageName == 242) : addChapter6Page1(242);
+			elseif($pageName == 244) : addChapter6Page2(244);
+			else: ?>
+	<div id="p<?php echo intval($pageName); ?>" class="page withimg">
 		<div>
-			<img data-original="<?php echo BASE_URL; ?>assets/images/relatory/PT/<?php echo $file; ?>" />
+			<img data-original="<?php echo BASE_URL; ?>assets/images/relatory-<?php echo $type; ?>/<?php echo $language; ?>/<?php echo $file; ?>" />
 			<ul class="info">
 				<li class="pagenumber"><?php echo intval($pageName); ?></li>
 				<li class="star">
@@ -463,6 +535,6 @@
 			</ul>
 		</div>
 	</div>
-	<?php endif; endforeach; ?>
+	<?php endif; endif; endforeach; ?>
 </div>
 <?php  include('../footer.php'); unset($GLOBALS['menu']); unset($GLOBALS['selected']); ?>

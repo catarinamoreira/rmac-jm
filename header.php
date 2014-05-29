@@ -1,5 +1,6 @@
 <?php require_once("assets/translations.php"); ?>
 <?php require_once("assets/init.php"); ?>
+<?php require_once('assets/Mobile_Detect.php'); $detect = new Mobile_Detect; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -8,12 +9,24 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php echo translate("Relatório e Contas 2013 - Jerónimo Martins"); ?></title>
-        <meta name="description" content="">
+        <title><?php echo translate("Jerónimo Martins - Relatório e Contas 2013"); ?></title>
+        <meta name="description" content="<?php echo translate("Relatório e Contas Jerónimo Martins 2013. Há mais de 220 anos a inovar em direção a um mundo melhor e mais sustentável."); ?>">
+        <meta name="keywords" content="Relatório e Contas, relatório e contas 2013, jeronimo martins, jerónimo martins, relatorio e contas 2013, sustentabilidade, ara, pingo doce, biedronka, unilever jerónimo martins, JM relatorio e contas, annual report.">
+        <link rel="canonical" href="<?php echo CURRENT_URL; ?>">
+        
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="<?php echo BASE_URL; ?>assets/images/fb-<?php echo $GLOBALS['currentLanguage']; ?>.png">
+        <meta property="og:title" content="<?php echo translate("Jerónimo Martins - Relatório e Contas 2013"); ?>">
+        <meta property="og:url" content="<?php echo CURRENT_URL; ?>">
+        <meta property="og:description" content="<?php echo translate("Relatório e Contas Jerónimo Martins 2013. Há mais de 220 anos a inovar em direção a um mundo melhor e mais sustentável."); ?>">
+        
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL; ?>assets/images/favicon.ico"/>
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/normalize.css">
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/main.css">
+        <?php if($GLOBALS['currentLanguage'] == "en") : ?>
+        	<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/chapters-en.css">
+        <?php endif; ?>
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/player/mediaelementplayer.min.css" />
     	<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/player/mejs-skins.css" />
     	<!--[if lte IE 8]>
@@ -28,7 +41,7 @@
    		var translateList = <?php echo json_encode($GLOBALS['translations']) ?>;
    	</script>
     </head>
-    <body <?php if(!isset($_COOKIE['eucookie'])) echo 'class="cookie"' ?> data-language="<?php echo $GLOBALS['currentLanguage']; ?>" data-baseurl="<?php echo BASE_URL; ?>" data-currenturl="<?php echo CURRENT_URL; ?>">
+    <body class="hidden <?php if(!isset($_COOKIE['eucookie'])) echo 'cookie'; ?>" data-language="<?php echo $GLOBALS['currentLanguage']; ?>" data-baseurl="<?php echo BASE_URL; ?>" data-currenturl="<?php echo CURRENT_URL; ?>">
     	<?php if(!isset($_COOKIE['eucookie'])): ?>
 			<div id="eucookielaw">
 				<div>
@@ -54,7 +67,7 @@
 		    		<ul class="first">
 		    			<li class="restrain"><a href="javascript:;" class="gotopage" page-id="6"><span><?php echo translate("Mensagem do Presidente"); ?></span></a><span class="border"></span></li>
 		    			<li class="restrain"><a href="javascript:;" class="gotopage" page-id="7"><span><?php echo translate("Mensagem do<br> Administrador-Delegado"); ?></span></a><span class="border"></span></li>
-		    			<li><a href="javascript:;" class="number number-1"><span class="number"></span><span><span><?php echo translate("O Grupo<br> Jerónimo Martins"); ?></span></span></a><span class="border"></span>
+		    			<li><a href="javascript:;" class="number number-1 gotopage" page-id="10"><span class="number"></span><span><span><?php echo translate("O Grupo<br> Jerónimo Martins"); ?></span></span></a><span class="border"></span>
 		    				<div>
 			    				<span class="border top"></span> 
 			    				<ul>
@@ -65,7 +78,7 @@
 			    				<span class="border bottom"></span>
 		    				</div>
 		    			</li>
-		    			<li><a href="javascript:;" class="number number-2"><span class="number"></span><span><span><?php echo translate("Relatório consolidado<br> de Gestão"); ?></span></span></a><span class="border"></span>
+		    			<li><a href="javascript:;" class="number number-2 gotopage" page-id="26"><span class="number"></span><span><span><?php echo translate("Relatório consolidado<br> de Gestão"); ?></span></span></a><span class="border"></span>
 		    				<div>
 			    				<span class="border top"></span>
 			    				<ul>
@@ -81,7 +94,7 @@
 			    				<span class="border bottom"></span>
 		    				</div>
 		    			</li>
-		    			<li><a href="javascript:;" class="number number-3"><span class="number"></span><span><span><?php echo translate("Demonstrações<br> Financeiras Consolidadas"); ?></span></span></span></a><span class="border"></span>
+		    			<li><a href="javascript:;" class="number number-3 gotopage" page-id="70"><span class="number"></span><span><span><?php echo translate("Demonstrações<br> Financeiras Consolidadas"); ?></span></span></span></a><span class="border"></span>
 		    				<div>
 			    				<span class="border top"></span>
 			    				<ul>
@@ -93,7 +106,7 @@
 			    				<span class="border bottom"></span>
 		    				</div>
 		    			</li>
-		    			<li><a href="javascript:;" class="number number-4"><span class="number"></span><span><span><?php echo translate("Governo da Sociedade"); ?></span></span></span></a><span class="border"></span>
+		    			<li><a href="javascript:;" class="number number-4 gotopage" page-id="148"><span class="number"></span><span><span><?php echo translate("Governo da Sociedade"); ?></span></span></span></a><span class="border"></span>
 		    				<div>
 			    				<span class="border top"></span>
 			    				<ul>
@@ -108,7 +121,7 @@
 			    				<span class="border bottom"></span>
 		    				</div>
 		    			</li>
-		    			<li><a href="javascript:;" class="number number-5"><span class="number"></span><span><span><?php echo translate("Responsabilidade corporativa<br> na criação de valor"); ?></span></span></span></a><span class="border"></span>
+		    			<li><a href="javascript:;" class="number number-5 gotopage" page-id="200"><span class="number"></span><span><span><?php echo translate("Responsabilidade corporativa<br> na criação de valor"); ?></span></span></span></a><span class="border"></span>
 		    				<div>
 			    				<span class="border top"></span>
 			    				<ul>
@@ -126,7 +139,7 @@
 			    				<span class="border bottom"></span>
 		    				</div>
 		    			</li>
-						<li><a href="javascript:;" class="number number-6"><span class="number"></span><span><span><?php echo translate("Relatório e contas individual"); ?></span></span></span></a><span class="border"></span>
+						<li><a href="javascript:;" class="number number-6 gotopage" page-id="242"><span class="number"></span><span><span><?php echo translate("Relatório e contas individual"); ?></span></span></span></a><span class="border"></span>
 							<div>
 			    				<span class="border top"></span>
 			    				<ul>

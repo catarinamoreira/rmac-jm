@@ -2,6 +2,8 @@ var currentLanguage = $("body").attr("data-language");
 var baseurl = $("body").attr("data-baseurl");
 var currenturl = $("body").attr("data-currenturl");
 
+var pagesBlackList = new Array(1,2,3,4,5,6,10,12,26,28,70,72,148,150,200,202,242,244);
+
 function checkRelatorySize(){
 	var browserHeight = $(window).height();
 	var browserWidth = $(window).width();
@@ -208,7 +210,7 @@ function updatePageNumber(){
 		    	$(".navigation a.next").addClass("disabled");
 		    }
 		    
-		    if(parseInt(pageNumber) < 6 || parseInt(pageNumber) > 301){
+		    if($.inArray(parseInt(pageNumber),pagesBlackList) != -1){
 		    	$(".nav.bottom ul li.star").stop(true,true).fadeOut(200);
 		    } else {
 		    	$(".nav.bottom ul li.star").stop(true,true).fadeIn(200);
@@ -242,20 +244,21 @@ function checkBodyWidth(){
 	$("body").width(browserWidth - bodyPadding);
 	
 	
-	var initialImageWidth = 3508;
-	var initialImageHeight = 2480;
+	var initialImageWidth = 1919;
+	var initialImageHeight = 1382;
 	var initialImageRatio = (browserWidth - bodyPadding)/initialImageWidth;
 	
 	if(browserWidth <= 640){
 		var bodyPadding = parseInt($("body").css("padding-top").replace("px", ""));
-		$(".page").css("height", "auto").css("min-height", Math.round(initialImageHeight*initialImageRatio)+"px")
+		$(".page").css("height", "auto").css("min-height", (Math.round(initialImageHeight*initialImageRatio)+1)+"px")
+		$(".page.withimg img").css("width", $("body").width()).css("height", imageHeight);
 		
 		var chapterHeight = 500;
 		if(browserHeight > 500)
 			chapterHeight = browserHeight - bodyPadding;
 			
 		$(".page.withBG").css("min-height", chapterHeight);
-		$(".page.withBG > div").css("min-height", (browserHeight - bodyPadding)+"px").removeClass("hidden");
+		$(".page.withBG > div").css("height", (browserHeight - bodyPadding)+"px").removeClass("hidden");
 	} else {
 		var imageHeight = Math.round(initialImageHeight*initialImageRatio);
 		if(imageHeight < browserHeight)
@@ -263,11 +266,14 @@ function checkBodyWidth(){
 		else
 			$(".page").css("min-height", imageHeight+"px").css("height", "auto");
 			
-		var chapterHeight = 500;
-		if(browserHeight > 500)
+		$(".page.withimg img").css("width", $("body").width()).css("height", imageHeight);
+		
+		var chapterHeight = 640;
+		if(browserHeight > 640)
 			chapterHeight = browserHeight;
+		
 		$(".page.withBG").css("min-height", chapterHeight+"px").css("height", "auto");
-		$(".page.withBG > div").css("min-height", browserHeight+"px").removeClass("hidden");
+		$(".page.withBG > div").css("height", browserHeight+"px").removeClass("hidden");
 	}
 }
 
@@ -275,7 +281,7 @@ function checkSelectedMenu(){
 	$("div.menu-container ul.first li").removeClass("selected");
 	var currentPageNumber = parseInt($(".nav.bottom .pagenumber").text());
 	
-	var intervals = new Array(Array(11,25), Array(26,69), Array(70,147), Array(148,199), Array(200,241), Array(242,301));
+	intervals = new Array(Array(10,25), Array(26,69), Array(70,147), Array(148,199), Array(200,241), Array(242,301));
 	
 	if(currentPageNumber == 2) $("div.menu-container ul.first li.indice").addClass("selected");
 	else if(currentPageNumber == 6) $("div.menu-container ul.first > li").eq(0).addClass("selected");
@@ -300,18 +306,19 @@ function animateChapter(){
 		var windowHeight = $(window).height();
 		var visibleViewPort = currentScrollPosition + windowHeight;
 		
+		var originalVisiblePageArea = visibleViewPort - chapterInitPos;
 		var visiblePageArea = visibleViewPort - chapterInitPos;
 		
 		if(visiblePageArea < 0) visiblePageArea = 0;
 		if(visiblePageArea > chapterHeight) visiblePageArea = chapterHeight;
 		
 		$(this).find(".animate-right-to-left").each(function(){
-			var rightPosition = getAnimationWidthPosition($(this),visibleViewPort,chapterInitPos,chapterHeight);
+			var rightPosition = getAnimationWidthPosition($(this),visibleViewPort,chapterInitPos,chapterHeight, "right");
 			$(this).css("right", Math.round(rightPosition)+"px");
 		})
 		
 		$(this).find(".animate-left-to-right").each(function(){
-			var leftPosition = getAnimationWidthPosition($(this),visibleViewPort,chapterInitPos,chapterHeight);
+			var leftPosition = getAnimationWidthPosition($(this),visibleViewPort,chapterInitPos,chapterHeight, "left");
 			$(this).css("left", Math.round(leftPosition)+"px");
 		})
 		
@@ -319,20 +326,78 @@ function animateChapter(){
 			var topPosition = getAnimationHeightPosition($(this),visibleViewPort,chapterInitPos,chapterHeight);
 			$(this).css("top", Math.round(topPosition)+"px");
 		})
+		
+		$(this).find(".animate-block").each(function(){
+			var contentHeight = $(this).height();
+			var elementTopPosition = $(this).position().top; 
+			
+			var originalVisibleContentArea = visibleViewPort - (chapterInitPos + elementTopPosition);
+			var visibleContentArea = visibleViewPort - (chapterInitPos + elementTopPosition);
+			var nonVisibleArea = chapterHeight-originalVisiblePageArea;
+			if(nonVisibleArea > 0) nonPosVisibleArea = 0;
+	
+			if(visibleContentArea < 0) visibleContentArea = 0;
+			if(visibleContentArea > chapterHeight - elementTopPosition) visibleContentArea = chapterHeight - elementTopPosition;
+
+			if(originalVisibleContentArea >= contentHeight && originalVisiblePageArea <= (chapterHeight + elementTopPosition) && !$(this).hasClass("animated")){
+				$(this).addClass("animated");
+				$(this).css("visibility", "visible");
+				var totalAnimationDuration = 1500;
+				var totalImages = $(this).find("> img").length;
+				var delay = 80;
+				for(var i = 0; i < totalImages; i++){
+					var currentElement = $(this).find("> img").eq(i);
+					var currentWidth = currentElement.outerWidth();
+					
+					if(currentElement.parent().hasClass('right-to-left')){
+						currentElement.css("left", currentWidth+"px");
+						currentElement.stop(true,true).delay((delay*i)).animate({left: 0},totalAnimationDuration);
+					} else if(currentElement.parent().hasClass('left-to-right')){
+						var parentLeft = currentElement.parent().position().left;
+						currentElement.css("left", -Math.round(currentWidth+parentLeft)+"px");
+						currentElement.stop(true,true).delay((delay*i)).animate({left: 0},totalAnimationDuration);
+					}
+				}
+			} else if((originalVisibleContentArea < 0 && $(this).hasClass("animated")) || (originalVisiblePageArea >= (chapterHeight*2) && $(this).hasClass("animated"))){
+				$(this).removeClass("animated");
+				$(this).css("visibility", "hidden");
+				$(this).find("> img").removeAttr("style").stop(true,true);
+			} 
+		})
+		
+		/*
+		var innerChapterHeight = chapterHeight/2;
+		var topPosition = 0;
+		if(visiblePageArea > innerChapterHeight) topPosition = visiblePageArea - innerChapterHeight;
+		$(this).find("> div").css("top", topPosition+"px");*/
 	})
 }
 
-function getAnimationWidthPosition(element,visibleViewPort,chapterInitPos,chapterHeight){
+function getAnimationWidthPosition(element,visibleViewPort,chapterInitPos,chapterHeight, direction){
+	/*if(element.hasClass("first-half")){
+		chapterHeight = chapterHeight/2;
+	}
+	
+	if(element.hasClass("second-half")){
+		chapterHeight = chapterHeight/2;
+		chapterInitPos = chapterInitPos + chapterHeight;
+	}
+	
+	chapterHeight = chapterHeight - 50;*/
+	
 	var elementTopPosition = element.position().top;
-	if(element.parent().hasClass('elements-container'))
+	var elementLeftPosition = 0;
+	if(element.parent().hasClass('elements-container')){
 		elementTopPosition += element.parent().position().top;
+		if(direction == "left") elementLeftPosition = element.parent().position().left;
+	}
 	
 	visiblePageArea = visibleViewPort - (chapterInitPos + elementTopPosition);
 	
 	if(visiblePageArea < 0) visiblePageArea = 0;
 	if(visiblePageArea > chapterHeight - elementTopPosition) visiblePageArea = chapterHeight - elementTopPosition;
 	
-	var elementWidth = element.outerWidth();
+	var elementWidth = element.outerWidth() + elementLeftPosition;
 	var perPixel = elementWidth/(chapterHeight - elementTopPosition);
 	var position = - elementWidth + (visiblePageArea*perPixel);
 	
@@ -382,11 +447,12 @@ $(window).load(function(){
 	checkRelatorySize();
 	checkMenuToSetHeight();
 	
-	$('.break-apart').columnize({ width: 200, lastNeverTallest: true, buildOnce: false});
+	$('.break-apart').columnize({ width: 230, lastNeverTallest: true, buildOnce: false});
 	$('.break-apart').removeClass("invisible");
 })
 
 $(window).ready(function(){
+	$("body").removeClass("hidden");
 	
 	$('audio,video').mediaelementplayer({
 		pluginPath: 'assets/player/',
@@ -444,7 +510,8 @@ $(window).ready(function(){
 	
 	
 	$("div.page img").lazyload({
-	    threshold : 200
+	    threshold : 200,
+	    placeholder: baseurl + "/assets/images/transparent.png"
 	});
 	
 	$("body.cookie nav.left").each(function(){
@@ -480,7 +547,7 @@ $(window).ready(function(){
 	}
 	
 	function addPageToCookie(page, update){
-		if(page >= 6 && page <= 301){
+		if($.inArray(parseInt(page),pagesBlackList) == -1){
 			if($.inArray(page, selectedHistory) == -1){
 				selectedHistory.push(page);
 			}
