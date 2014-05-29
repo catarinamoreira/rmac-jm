@@ -190,7 +190,12 @@ function updatePageNumber(){
 	if($(".nav.bottom").length > 0){
 		var visibleOnViewPort = $("div.page:in-viewport");
 		var moreVisiblePage = getMoreVisibleElement(visibleOnViewPort);
-		var pageNumber = moreVisiblePage[0].replace("p", "");
+		var pageNumber;
+		if(moreVisiblePage[0].indexOf("p") != 0){
+			pageNumber = $("#"+moreVisiblePage[0]).attr("data-page");
+		} else {
+			pageNumber = moreVisiblePage[0].replace("p", "");
+		}
 		var currentPageNumber = $(".nav.bottom .pagenumber").text();
 		
 		if(currentPageNumber != pageNumber){
@@ -225,8 +230,15 @@ function goToPage(pageIndex, isIndex){
 	        scrollTop: $("#"+$(".page-container > *").eq(pageIndex).attr("id")).offset().top
 	    }, 400);
 	} else {
+		var topPos = 0;
+		if($("#p"+pageIndex).length > 0){
+			topPos = $("#p"+pageIndex).offset().top;
+		} else {
+			topPos = $(".p"+pageIndex).offset().top;
+		}
+		
 		$('html, body').animate({
-	        scrollTop: $("#p"+pageIndex).offset().top
+	        scrollTop: topPos
 	    }, 400);
 	}
 }
@@ -471,7 +483,12 @@ $(window).ready(function(){
 	$(".navigation a.previous").click(function(){
 		$(".navigation a.next").removeClass("disabled");
 		var pageNumber = $(".nav.bottom .pagenumber").text();
-		var divIndex = $("#p"+pageNumber).index();
+		var divIndex;
+		if($("#p"+pageNumber).length > 0){
+			divIndex = $("#p"+pageNumber).index();
+		} else {
+			divIndex = $(".p"+pageNumber).index();
+		}
 
 		if(divIndex - 1 >= 0) goToPage(divIndex - 1, true);
 	})
@@ -479,16 +496,34 @@ $(window).ready(function(){
 	$(".navigation a.next").click(function(){
 		$(".navigation a.previous").removeClass("disabled");
 		var pageNumber = $(".nav.bottom .pagenumber").text();
-		var divIndex = $("#p"+pageNumber).index();
+		var divIndex;
+		if($("#p"+pageNumber).length > 0){
+			divIndex = $("#p"+pageNumber).index();
+		} else {
+			divIndex = $(".p"+pageNumber).index();
+		}
 		
 		if(divIndex + 1 <= $(".page-container > *").length - 1) goToPage(divIndex + 1, true);
 	})
 	
+	var chapterpages = new Array();
+	chapterpages.push(10, 26, 70, 148, 200, 242);
+	var chapterpagestitles = new Array();
+	chapterpagestitles.push("o-grupo-jeronimo-martins","relatorio-consolidado-de-gestao","demonstracoes-financeiras-consolidadas","governo-da-sociedade","responsabilidade-corporativa-na-criacao-de-valor","relatorio-e-contas-individual");
+	
 	$("a.gotopage").click(function(){
-		var pageid = $(this).attr("page-id");
-		
+		var pageid = parseInt($(this).attr("page-id"));
+				
 		if($(".menu-container").hasClass("blank")){
-			window.location.href = baseurl+"#p"+pageid;
+			var address = "#p"+pageid;
+			var isChapterIndex = $.inArray(pageid, chapterpages);
+			if(isChapterIndex != -1){
+				if(currentLanguage == "en")
+					address = "#"+translate(chapterpagestitles[isChapterIndex]);
+				else
+					address = "#"+chapterpagestitles[isChapterIndex];
+			}
+			window.location.href = baseurl+currentLanguage+address;
 		} else {
 			goToPage(parseInt(pageid), false);
 		}
@@ -496,12 +531,21 @@ $(window).ready(function(){
 	
 	$("ul.languages a").click(function(){
 		if(!$(this).hasClass("selected") && $(this).attr("href") == "javascript:;"){
-			var pageNumber = $(".nav.bottom .pagenumber").text();
+			var pageNumber = parseInt($(".nav.bottom .pagenumber").text());
 			var browserwidth = $(window).width(); 
 			var selectedLanguage = $(this).attr("data-language");
 			
+			$.cookie('jm_history', "");
 			if($(".nav.bottom .pagenumber").length > 0 && browserwidth > 640){
-				window.location.href = baseurl+selectedLanguage+"/#p"+pageNumber;
+				var address = "#p"+pageNumber;
+				var isChapterIndex = $.inArray(pageNumber, chapterpages);
+				if(isChapterIndex != -1){
+					if(selectedLanguage == "en")
+						address = "#"+translate(chapterpagestitles[isChapterIndex], true);
+					else
+						address = "#"+chapterpagestitles[isChapterIndex];
+				}
+				window.location.href = baseurl+selectedLanguage+"/"+address;
 			} else {
 				window.location.href = baseurl+selectedLanguage+"/";
 			}
@@ -628,8 +672,8 @@ $(window).ready(function(){
 			generatePopup();
 	})
 
-	function translate(string){
-		if(currentLanguage == "en" && translateList[string] && translateList[string] != ""){
+	function translate(string, force){
+		if((currentLanguage == "en" || force == true) && translateList[string] && translateList[string] != ""){
 			string = translateList[string];
 		} 
 		return string;
@@ -758,7 +802,10 @@ $(window).ready(function(){
 		
 		if(browserwidth > 640){
 			var pageNumber = $(".nav.bottom .pagenumber").text();
-			if($("#p"+pageNumber).length > 0) $(document).scrollTop($("#p"+pageNumber).position().top);
+			if($("#p"+pageNumber).length > 0) 
+				$(document).scrollTop($("#p"+pageNumber).position().top);
+			else if($(".p"+pageNumber).length > 0) 
+				$(document).scrollTop($(".p"+pageNumber).position().top);
 			$("nav.left > div").unbind("mouseenter", mouseEnterMenuDiv).on("mouseenter", mouseEnterMenuDiv);
 			$("nav.left").unbind("mouseleave", mouseLeaveMenuDiv).on("mouseleave", mouseLeaveMenuDiv);
 			$("nav.left > div").css("display", "block");

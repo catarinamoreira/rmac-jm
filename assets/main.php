@@ -273,7 +273,7 @@
 		</div>
 	</div>*/ ?>
 	<?php function addChapter1Page1() {
-		 echo '<div id="p10" class="page withBG chapter1-page1 chapter-to-animate">
+		 echo '<div id="'.translate("o-grupo-jeronimo-martins").'" data-page="10" class="p10 page withBG chapter1-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/chapter-1-page-1-bg-1.png" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-1-page-1-nmb-1.png" class="number animate-top-to-bottom" />
@@ -304,7 +304,7 @@
 		</div>';
 	} ?>
 	<?php function addChapter2Page1() {
-		echo '<div id="p26" class="page withBG chapter2-page1 chapter-to-animate">
+		echo '<div  id="'.translate("relatorio-consolidado-de-gestao").'" data-page="26" class="p26 page withBG chapter2-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/chapter-2-page-1-bg-1.jpg" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-2-page-1-nmb-1.png" class="number animate-top-to-bottom" />
@@ -339,7 +339,7 @@
 		</div>';
 	} ?>
 	<?php function addChapter3Page1($pageNumber) {
-		echo '<div id="p'.$pageNumber.'" class="page withBG chapter3-page1 chapter-to-animate">
+		echo '<div id="'.translate("demonstracoes-financeiras-consolidadas").'" data-page="'.$pageNumber.'" class="p'.$pageNumber.' page withBG chapter3-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/blue-gradient.png" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-3-page-1-nmb-1.png" class="number animate-top-to-bottom" />
@@ -375,7 +375,7 @@
 		</div>';
 	} ?>
 	<?php function addChapter4Page1($pageNumber) {
-		echo '<div id="p'.$pageNumber.'" class="page withBG chapter4-page1 chapter-to-animate">
+		echo '<div id="'.translate("governo-da-sociedade").'" data-page="'.$pageNumber.'" class="p'.$pageNumber.' page withBG chapter4-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/chapter-4-page-1-bg-1.jpg" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-4-page-1-nmb-1.png" class="number animate-top-to-bottom" />
@@ -409,7 +409,7 @@
 		</div>';
 	} ?>
 	<?php function addChapter5Page1($pageNumber) {
-		echo '<div id="p'.$pageNumber.'" class="page withBG chapter5-page1 chapter-to-animate">
+		echo '<div id="'.translate("responsabilidade-corporativa-na-criacao-de-valor").'" data-page="'.$pageNumber.'" class="p'.$pageNumber.' page withBG chapter5-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/chapter-5-page-1-bg-1.jpg" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-5-page-1-nmb-1.png" class="number animate-top-to-bottom" />
@@ -444,7 +444,7 @@
 		</div>';
 	} ?>
 	<?php function addChapter6Page1($pageNumber) {
-		echo '<div id="p'.$pageNumber.'" class="page withBG chapter6-page1 chapter-to-animate">
+		echo '<div id="'.translate("relatorio-e-contas-individual").'" data-page="'.$pageNumber.'" class="p'.$pageNumber.' page withBG chapter6-page1 chapter-to-animate">
 			<div>
 				<img src="'.BASE_URL.'assets/images/chapter-6-page-1-bg-1.jpg" class="background" />
 				<img src="'.BASE_URL.'assets/images/chapter-6-page-1-nmb-1.png" class="number animate-top-to-bottom" />

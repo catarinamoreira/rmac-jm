@@ -79,6 +79,12 @@ Organisation and Corporate Governance",
 		"termos-e-condicoes" => "terms-and-conditions",
 		"Índice" => "Index",
 		"Relatório e Contas Jerónimo Martins 2013. Há mais de 220 anos a inovar em direção a um mundo melhor e mais sustentável." => "Jerónimo Martins 2013 Report. Innovating for more than 220 years towards a better and more sustainable world.",
+		"o-grupo-jeronimo-martins" => "the-jeronimo-martins-group",
+		"relatorio-consolidado-de-gestao" => "consolidated-management-report",
+		"demonstracoes-financeiras-consolidadas" => "consolidated-financial-statements",
+		"governo-da-sociedade" => "corporate-governance",
+		"responsabilidade-corporativa-na-criacao-de-valor" => "corporate-responsibility-in-value-creation",
+		"relatorio-e-contas-individual" => "individual-annual-report",
 	);
 	
 	function translate($string){
