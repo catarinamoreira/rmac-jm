@@ -27,7 +27,7 @@
 		$pdf = new PDFMerger;
 		
 		if($choice == "document"){
-			$printAll = "attachment";
+			/*$printAll = "attachment";
 			if($exportType == 2) $printAll = "inline";
 			
 			header('Content-Transfer-Encoding: binary');  // For Gecko browsers mainly
@@ -38,6 +38,9 @@
 			header('Content-Type: application/pdf');  // Change the mime type if the file is not PDF
 			header('Content-Disposition: '.$printAll.'; filename=' . $filename);  // Make the browser display the Save As dialog
 			readfile($PDFFile);  // This is necessary in order to get it to actually download the file, otherwise it will be 0Kb
+			*/
+			$pdf->addPDF($PDFFile, 'all');
+			$pdf->merge($print, 'jmrc13_myreport_'.date("dmY",time()), $printfile);
 			
 		} elseif($choice == "pages" && count($totalPages) > 0){
 			$pdf->addPDF($PDFFile, implode(",", $totalPages));
