@@ -14,8 +14,13 @@
 		$PDFFile = 'PDFs/jmrc13_'.$language.'.pdf';
 		$filename = 'jmrc13_'.$language.".pdf";
 		
+		$printfile = false;
+		
 		$print = "download";
-		if($exportType == 2) $print = "browser";
+		if($exportType == 2) {
+			$print = "browser";
+			$printfile = true;
+		}
 
 		$currentime = time();
 		
@@ -36,7 +41,7 @@
 			
 		} elseif($choice == "pages" && count($totalPages) > 0){
 			$pdf->addPDF($PDFFile, implode(",", $totalPages));
-			$pdf->merge($print, 'jmrc13_myreport_'.date("dmY",time()));
+			$pdf->merge($print, 'jmrc13_myreport_'.date("dmY",time()), $printfile);
 		} else if($choice == "chaps"){
 			$selectedChaps = array();
 			
@@ -47,7 +52,7 @@
 			}
 			
 			$pdf->addPDF($PDFFile, implode(",", $selectedChaps));
-			$pdf->merge($print, 'jmrc13_myreport_'.date("dmY",time()));
+			$pdf->merge($print, 'jmrc13_myreport_'.date("dmY",time()), $printfile);
 		}
     }
 ?>

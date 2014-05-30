@@ -474,7 +474,7 @@ $(window).load(function(){
 	checkRelatorySize();
 	checkMenuToSetHeight();
 	
-	$('.break-apart').columnize({ width: 230, lastNeverTallest: true, buildOnce: false});
+	$('.break-apart').columnize({ width: 430, lastNeverTallest: true, buildOnce: false});
 	$('.break-apart').removeClass("invisible");
 })
 

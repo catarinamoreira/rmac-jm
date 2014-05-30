@@ -61,6 +61,8 @@
     		<p class="capit"><span class="bar"></span><?php echo translate("Capítulos"); ?><span class="border"></span></p>
     	</div>
     	<nav class="left">
+    		<a href="javascript:;" class="logo gotopage" page-id="1"><img src="<?php echo BASE_URL; ?>assets/images/logo.png" /></a>
+    		<p class="capit"><span class="bar"></span><?php echo translate("Capítulos"); ?><span class="border"></span></p>
     		<a href="javascript:;" class="openmenu"></a>
     		<div>
     			<div class="menu-container <?php echo $GLOBALS['menu']; ?>">
