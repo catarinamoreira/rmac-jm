@@ -365,7 +365,7 @@ span.play > span {width: 0;height: 0;border-style: solid;border-width: 15px 0 15
 .page.withBG.terms .center > div {width:100%;max-width:1110px;margin:0 auto;}
 
 .page.withBG h1 {font-size:14px;text-transform: uppercase;background: #f7a600;padding:5px;font-family: 'SohoGothicPro-Light',sans-serif;float:left;color:#ffffff;margin-bottom:15px;}
-.page.withBG.terms > div > div {padding: 130px 20px 40px;}.page.withBG .break-apart {text-align:justify;}
+.page.withBG.terms > div > div {padding: 75px 20px 40px;}.page.withBG .break-apart {text-align:justify;}
 .page.withBG .header {padding:0 15px;}
 .page.withBG .break-apart .column {overflow:hidden;}
 .page.withBG .break-apart p {padding:0 15px;font-family: 'SohoGothicPro-Light',sans-serif;font-size:12px;line-height:1.4em;color:#575756;margin-top:10px;}.page.withBG .break-apart p.nob + p {margin-top:0;}.page.withBG .break-apart a {color:#46b1db;word-break: break-all;}.page.withBG .break-apart a:hover {text-decoration: underline;}.page.withBG .break-apart p b {font-weight: normal;font-family: 'SohoGothicPro-Medium',sans-serif;}
